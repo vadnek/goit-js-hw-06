@@ -18,6 +18,10 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
+// const elements = {};
+//     elements.email = email.currentTarget;
+//     elements.password = password.currentTarget;
+
 const {
     elements : {email, password}
 } = event.currentTarget;
@@ -25,8 +29,11 @@ const {
 if (email.value === "" || password.value === "") {
     return console.log("Bсе поля должны быть заполнены.");
 }
+    const user = {};
+    user.email = email.value;
+    user.password = password.value;
+    console.log(user);
 
-    console.log(`email: ${email.value}, password: ${password.value}`);
     event.currentTarget.reset();
 }
 
